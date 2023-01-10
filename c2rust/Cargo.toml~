@@ -1,0 +1,23 @@
+[workspace]
+members = [
+]
+[package]
+name = "c2rust"
+authors = ["C2Rust"]
+version = "0.0.0"
+publish = false
+edition = "2018"
+autobins = false
+
+[lib]
+name = "c2rust"
+path = "lib.rs"
+crate-type = ["staticlib", "rlib"]
+[[bin]]
+path = "src/sqlite3.rs"
+name = "sqlite3"
+[dependencies]
+c2rust-bitfields= "0.3"
+f128= "0.2"
+num-traits= "0.2"
+libc= "0.2"
